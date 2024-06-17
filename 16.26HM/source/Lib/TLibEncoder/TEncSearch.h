@@ -195,6 +195,20 @@ public:
 #endif
                                 );
 
+
+  Void predInterSearch2(TComDataCU* pcCU,
+      TComYuv* pcOrgYuv,
+      TComYuv* pcPredYuv,
+      TComYuv* pcResiYuv,
+      TComYuv* pcRecoYuv,
+      TComYuv* pcSecYuv
+      DEBUG_STRING_FN_DECLARE(sDebug),
+      Bool        bUseRes = false
+#if AMP_MRG
+      , Bool        bUseMRG = false
+#endif
+  );
+
   /// encode residual and compute rd-cost for inter mode
   Void encodeResAndCalcRdInterCU( TComDataCU* pcCU,
                                   TComYuv*    pcYuvOrg,
